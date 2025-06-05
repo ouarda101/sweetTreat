@@ -386,3 +386,80 @@ header nav a:hover {
     color: var(--soft-gold); /* Keep the same color on hover for pixel consistency */
     text-shadow: 1px 1px 0px rgba(0,0,0,0.3); /* Add a subtle pixel shadow on hover */
 }
+
+.cart-summary {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the cart summary */
+    gap: 0.5rem;
+    margin-top: 1rem;
+    font-family: 'Press Start 2P', cursive;
+    color: var(--soft-gold);
+    font-size: 0.9rem;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+}
+
+.cart-summary .cart-icon {
+    font-size: 1.5rem; /* Larger emoji icon */
+    line-height: 1; /* Adjust line height for better alignment */
+}
+
+.cart-summary .cart-count {
+    background-color: var(--pale-peach);
+    color: var(--deep-plum); /* Dark text on light background */
+    padding: 0.2rem 0.5rem;
+    border-radius: 0; /* Square corners */
+    border: 2px solid var(--subtle-mint-green);
+    box-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+    min-width: 1.5rem; /* Ensure minimum width */
+    text-align: center;
+}
+
+/* Specific styling for donut cards on shop page */
+#shop-donut-list .donut-card {
+    border: 2px solid var(--pale-peach); /* Use pale peach for shop card borders */
+}
+
+#shop-donut-list .donut-card img {
+    border: 2px solid var(--subtle-mint-green); /* Use subtle mint for shop image borders */
+}
+
+#shop-donut-list .donut-card h3 {
+    color: var(--soft-gold); /* Consistent highlight color */
+}
+
+#shop-donut-list .donut-card p {
+    color: var(--light-grey); /* Consistent primary text color */
+}
+
+#shop-donut-list .donut-card .price {
+    color: var(--pale-peach); /* Consistent highlight color */
+}
+
+/* Add to Cart Button */
+.add-to-cart-button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    background-color: var(--subtle-mint-green); /* Button color */
+    color: var(--deep-plum); /* Dark text on button */
+    padding: 0.6rem 1rem;
+    border: 2px solid var(--cool-grey-blue);
+    border-radius: 0;
+    box-shadow: 3px 3px 0px var(--pixel-shadow-color);
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+    margin-top: 1rem; /* Space from description/price */
+    width: calc(100% - 1.6rem); /* Full width within card padding */
+    display: block; /* Make it a block element to take full width */
+}
+
+.add-to-cart-button:hover {
+    background-color: #8FD88F; /* Slightly lighter mint on hover */
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0px var(--pixel-shadow-color);
+}
+
+.add-to-cart-button:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0px var(--pixel-shadow-color);
+}
