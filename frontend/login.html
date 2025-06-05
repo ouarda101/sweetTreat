@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Pixel Treats</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Admin Access Protocol</h1>
+        <p>Login to manage your sweet inventory!</p>
+        <nav>
+            <ul>
+                <li><a href="/frontend/index.html">Home</a></li>
+                <li><a href="/frontend/register.html">Register</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <main class="login-page-main">
+        <section class="login-form-section">
+            <h2>System Authentication Required</h2>
+            <form id="login-form" class="pixel-form">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="pixel-button">Access Denied... Wait, I Mean Login!</button>
+                <p id="login-message" class="login-message"></p>
+            </form>
+            <p class="form-bottom-link">
+                No account? <a href="/frontend/register.html">Register here!</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sweet Pixel Treats. All rights reserved.</p>
+    </footer>
+
+    <script src="login.js"></script>
+</body>
+</html>

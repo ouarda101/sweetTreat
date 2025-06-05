@@ -1,0 +1,388 @@
+:root {
+    --warm-rose: #E6A2B8; /* Dominant background color */
+    --dusty-teal: #80CBC4; /* UI containers, header, section background */
+    --soft-gold: #FFEB80; /* Call to action, pop-out elements, main headings, prices */
+    --cool-grey-blue: #90A4AE; /* Subtle outlines, secondary text, borders */
+    --light-grey: #EBEBEB; /* Main text, essential highlights */
+    --deep-plum: #673AB7; /* Darker text, strong accents */
+    
+    --pixel-shadow-color: rgba(0, 0, 0, 0.4); /* Hard shadow, can be adjusted */
+}
+
+/* General Body Styles */
+body {
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 0;
+    background-color: var(--warm-rose); /* Main background */
+    color: var(--light-grey); /* Main text color */
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+
+    /* --- STICKY FOOTER ADDITIONS --- */
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Stack children vertically */
+    /* --- END STICKY FOOTER ADDITIONS --- */
+}
+
+/* Header Styles */
+header {
+    background-color: var(--dusty-teal); /* UI container color */
+    color: var(--light-grey);
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 4px 4px 0px var(--pixel-shadow-color); /* Blocky shadow */
+    border-bottom: 4px solid var(--cool-grey-blue); /* Subtle outline border */
+}
+
+header h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.5rem;
+    margin: 0;
+    text-shadow: 2px 2px var(--pixel-shadow-color); /* Pixelated text shadow */
+    letter-spacing: 0.1em;
+    color: var(--soft-gold); /* Bright heading */
+}
+
+header p {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    color: var(--light-grey); /* Header subtitle */
+}
+
+/* Main Content Area */
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    
+    /* --- STICKY FOOTER ADDITION --- */
+    flex-grow: 1; /* Allows main content to take up available space, pushing footer down */
+    /* --- END STICKY FOOTER ADDITION --- */
+}
+
+/* Donut List Section */
+.donut-list-section {
+    background-color: var(--dusty-teal); /* UI container color */
+    padding: 1.5rem;
+    border-radius: 0;
+    box-shadow: 4px 4px 0px var(--pixel-shadow-color);
+    border: 2px solid var(--cool-grey-blue); /* Subtle outline border */
+}
+
+.donut-list-section h2 {
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    color: var(--soft-gold); /* Pop-out heading */
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px var(--pixel-shadow-color);
+}
+
+.donut-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    justify-content: center;
+}
+
+.donut-card {
+    background-color: var(--warm-rose); /* Card background */
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 2px 2px 0px var(--pixel-shadow-color);
+    transition: transform 0.1s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.8rem;
+    text-align: center;
+    border: 2px solid var(--soft-gold); /* Pop-out border */
+}
+
+.donut-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0px var(--pixel-shadow-color);
+}
+
+.donut-card img {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    border-radius: 0;
+    border: 2px solid var(--cool-grey-blue); /* Subtle outline for images */
+    object-fit: cover;
+    margin-bottom: 0.8rem;
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+.donut-card h3 {
+    font-family: 'Press Start 2P', cursive;
+    color: var(--soft-gold); /* Pop-out heading for donut name */
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    text-shadow: 1px 1px var(--pixel-shadow-color);
+}
+
+.donut-card p {
+    font-size: 0.8rem;
+    color: var(--light-grey); /* Main text color for description */
+    margin-bottom: 0.8rem;
+    flex-grow: 1;
+}
+
+.donut-card .price {
+    font-size: 1.3rem;
+    font-weight: normal;
+    color: var(--soft-gold); /* Pop-out color for price */
+    margin-top: auto;
+    text-shadow: 1px 1px var(--pixel-shadow-color);
+}
+
+.loading-message, .error-message, .no-donuts-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--light-grey); /* Main text color for messages */
+    padding: 2rem;
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem; /* Kept margin-top for spacing, but flex-grow does the main job */
+    background-color: var(--dusty-teal); /* UI container color */
+    color: var(--light-grey);
+    font-size: 0.8rem;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid var(--cool-grey-blue); /* Subtle outline border */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    .donut-list-section h2 {
+        font-size: 1.5rem;
+    }
+    .donut-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+header nav a {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.9rem;
+    color: var(--light-grey);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--cool-grey-blue);
+    background-color: var(--dusty-teal);
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+    transition: all 0.1s ease-out;
+}
+
+header nav a:hover {
+    color: var(--soft-gold);
+    border-color: var(--soft-gold);
+    background-color: #70b0a8; /* Slightly lighter teal */
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0px rgba(0,0,0,0.3);
+}
+
+.login-page-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 180px); /* Adjust based on header/footer height */
+    padding: 2rem 1rem; /* Add padding for smaller screens */
+    box-sizing: border-box; /* Include padding in element's total width */
+}
+
+.login-form-section {
+    background-color: var(--dusty-teal);
+    padding: 2rem;
+    border-radius: 0;
+    box-shadow: 6px 6px 0px var(--pixel-shadow-color);
+    border: 4px solid var(--soft-gold);
+    max-width: 450px;
+    width: 100%; /* Ensure it's responsive */
+    text-align: center;
+}
+
+.login-form-section h2 {
+    font-family: 'Press Start 2P', cursive;
+    color: var(--soft-gold);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px var(--pixel-shadow-color);
+}
+
+.pixel-form .form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.pixel-form label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--light-grey);
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px var(--pixel-shadow-color);
+}
+
+.pixel-form input[type="text"],
+.pixel-form input[type="password"] {
+    width: calc(100% - 16px); /* Account for padding */
+    padding: 0.5rem 0.8rem;
+    background-color: var(--warm-rose);
+    border: 2px solid var(--cool-grey-blue);
+    color: var(--light-grey);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.9rem;
+    border-radius: 0;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+    outline: none; /* Remove default outline */
+}
+
+.pixel-form input[type="text"]:focus,
+.pixel-form input[type="password"]:focus {
+    border-color: var(--soft-gold); /* Highlight on focus */
+    box-shadow: 3px 3px 0px rgba(0,0,0,0.4);
+}
+
+.pixel-button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    background-color: var(--soft-gold);
+    color: var(--deep-plum); /* Darker text for contrast on soft gold */
+    padding: 0.8rem 1.5rem;
+    border: 3px solid var(--cool-grey-blue);
+    border-radius: 0;
+    box-shadow: 4px 4px 0px var(--pixel-shadow-color);
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.pixel-button:hover {
+    background-color: #FCDA60; /* Slightly darker gold */
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--pixel-shadow-color);
+}
+
+.pixel-button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px var(--pixel-shadow-color);
+}
+
+.login-message {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 0;
+    border: 2px solid;
+    display: none; /* Hidden by default, shown by JS */
+}
+
+.login-message.success {
+    color: #61FF00; /* Green for success */
+    border-color: #61FF00;
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+.login-message.error {
+    color: #FF0061; /* Red for error */
+    border-color: #FF0061;
+    background-color: rgba(255, 0, 0, 0.1);
+}
+.search-bar-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem; /* Space below the search bar */
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+#donut-search-input {
+    flex-grow: 1; /* Allows input to take available space */
+    max-width: 300px; /* Limit max width on larger screens */
+    padding: 0.6rem 0.8rem;
+    background-color: var(--warm-rose); /* Match card background */
+    border: 2px solid var(--cool-grey-blue); /* Subtle outline */
+    color: var(--light-grey); /* Main text color */
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    border-radius: 0;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+    outline: none;
+}
+
+#donut-search-input::placeholder {
+    color: var(--cool-grey-blue); /* Placeholder text color */
+    opacity: 0.7;
+}
+
+#donut-search-input:focus {
+    border-color: var(--soft-gold); /* Highlight on focus */
+    box-shadow: 3px 3px 0px rgba(0,0,0,0.4);
+}
+
+#donut-search-button {
+    /* Reusing pixel-button styles, potentially overriding some */
+    font-size: 0.8rem; /* Smaller font for button */
+    padding: 0.6rem 1rem; /* Smaller padding */
+    width: auto; /* Don't force full width */
+    min-width: 100px; /* Ensure a minimum width */
+    flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+/* Responsive adjustment for search bar */
+@media (max-width: 480px) {
+    .search-bar-container {
+        flex-direction: column; /* Stack input and button vertically */
+        align-items: center; /* Center items when stacked */
+    }
+    #donut-search-input,
+    #donut-search-button {
+        width: 90%; /* Take more width when stacked */
+        max-width: 300px; /* Keep max width */
+    }
+}
+.form-bottom-link {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.75rem;
+    margin-top: 1.5rem;
+    color: var(--light-grey);
+}
+
+.form-bottom-link a {
+    color: var(--soft-gold); /* Highlight color for links */
+    text-decoration: none;
+    transition: color 0.1s ease-out;
+}
+
+.form-bottom-link a:hover {
+    color: var(--soft-gold); /* Keep the same color on hover for pixel consistency */
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.3); /* Add a subtle pixel shadow on hover */
+}
