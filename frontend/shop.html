@@ -3,42 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweet Pixel Treats</title>
+    <title>Shop - 8-Bit Donut Den</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Sweet Pixel Treats</h1>
-        <p>Pixel Perfect Donuts !</p>
+        <h1>The Glaze Gallery</h1>
+        <p>Pixel-perfect pastries for every quest!</p>
         <nav>
             <ul>
-                <li><a href="/frontend/index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="/frontend/shop.html">Shop</a></li>
                 <li><a href="/frontend/login.html">Login</a></li>
                 <li><a href="/frontend/register.html">Register</a></li>
-                
             </ul>
         </nav>
+        <div class="cart-summary">
+            <span class="cart-icon">🛒</span>
+            <span id="cart-count" class="cart-count">0</span>
+            <span class="cart-text">Bytes in Cart</span>
+        </div>
     </header>
 
     <main>
         <section class="donut-list-section">
-            <h2></h2>
-             <div class="search-bar-container">
-                <input type="text" id="donut-search-input" placeholder="Search for donuts...">
-                <button id="donut-search-button" class="pixel-button">SEARCH</button>
-            </div>
-            <div id="donut-list" class="donut-grid">
-                <p class="loading-message">Loading donuts...</p>
+            <h2>Our Dungeon's Delights!</h2>
+            
+            <div id="shop-donut-list" class="donut-grid">
+                <!-- Shop donuts will be loaded here by shop.js -->
+                <p class="loading-message">Fetching pixel treats...</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Sweet Pixel Treats. All rights reserved.</p>
+        <p>&copy; 2025 8-Bit Donut Den. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="shop.js"></script>
 </body>
 </html>
