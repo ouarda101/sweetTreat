@@ -1,4 +1,4 @@
-// frontend/script.js (No Changes)
+
 document.addEventListener('DOMContentLoaded', () => {
     const donutListContainer = document.getElementById('donut-list');
 
